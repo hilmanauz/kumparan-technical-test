@@ -1,0 +1,38 @@
+{
+  "name": "kumparan-technical-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test npx jest --detectOpenHandles --forceExit --runInBand -i",
+    "db:create:test": "cross-env NODE_ENV=test npx sequelize db:create",
+    "db:migrate:test": "cross-env NODE_ENV=test npx sequelize db:migrate",
+    "dev": "npx nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilmanauz/kumparan-technical-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hilmanauz/kumparan-technical-test/issues"
+  },
+  "homepage": "https://github.com/hilmanauz/kumparan-technical-test#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ioredis": "^4.27.9",
+    "ioredis-mock": "^5.6.0",
+    "minisearch": "^3.1.0",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^27.1.0",
+    "supertest": "^6.1.6"
+  }
+}

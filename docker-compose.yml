@@ -1,0 +1,23 @@
+version: "3.8"
+
+services: 
+  postgres:
+    image: "postgres:9.6.23"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: kumparanDatabaseDevelopment
+    ports: 
+      - "5432:5432"
+  redis:
+    image: "redis:6.2.5"
+
+  app: 
+    depends_on: 
+      - postgres
+      - redis
+    image: "hilmanauz/kumparan-test"
+    command: npm run dev
+    ports: 
+      - "8080:3000"
